@@ -1,7 +1,7 @@
 
 import { 
   Stethoscope, 
-  Tooth, 
+  Scissors, 
   Eye, 
   Brain, 
   Users, 
@@ -23,7 +23,7 @@ const Services = () => {
     {
       title: 'Atención Dental',
       description: 'Diagnósticos, tratamientos preventivos, extracciones y orientación en salud bucal.',
-      icon: Tooth
+      icon: Scissors // Using Scissors instead of Tooth
     },
     {
       title: 'Oftalmología',
@@ -78,8 +78,7 @@ const Services = () => {
               title={service.title}
               description={service.description}
               icon={service.icon}
-              className="animate-fade-in-slow"
-              style={{ animationDelay: `${index * 0.1}s` }}
+              className={`animate-fade-in-slow delay-${index * 100}`}
             />
           ))}
         </div>
