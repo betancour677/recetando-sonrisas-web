@@ -62,7 +62,7 @@ const Services = () => {
       id="servicios" 
       className="py-20"
       style={{
-        background: "linear-gradient(135deg, rgba(238, 250, 248, 1) 0%, rgba(247, 251, 255, 1) 100%)"
+        background: "linear-gradient(135deg, rgba(239, 250, 253, 1) 0%, rgba(247, 251, 255, 1) 100%)"
       }}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -78,7 +78,7 @@ const Services = () => {
               title={service.title}
               description={service.description}
               icon={service.icon}
-              className={`animate-fade-in-slow delay-${index * 100}`}
+              className={`animate-fade-in-slow`}
             />
           ))}
         </div>

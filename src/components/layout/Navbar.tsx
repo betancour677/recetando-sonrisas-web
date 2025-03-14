@@ -1,6 +1,6 @@
 
 import { useState, useEffect } from 'react';
-import { Menu, X, Heart } from 'lucide-react';
+import { Menu, X } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Navbar = () => {
@@ -42,8 +42,11 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <a href="#" className="flex items-center space-x-2">
-            <Heart className="h-6 w-6 text-teal-600" />
-            <span className="text-xl font-serif font-semibold">Recetando Sonrisas</span>
+            <img 
+              src="/lovable-uploads/9ec22ea9-5959-46cc-bb1d-c5d450e3a0a5.png" 
+              alt="Recetando Sonrisas Logo" 
+              className="h-12"
+            />
           </a>
 
           {/* Desktop Navigation */}
@@ -52,14 +55,14 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-gray-700 hover:text-teal-600 transition-colors"
+                className="text-sm font-medium text-gray-700 hover:text-logo-blue transition-colors"
               >
                 {link.name}
               </a>
             ))}
             <a
               href="#donar"
-              className="button-glow px-5 py-2 bg-teal-600 text-white rounded-full text-sm font-medium hover:bg-teal-700 transition-colors"
+              className="button-glow px-5 py-2 bg-logo-red text-white rounded-full text-sm font-medium hover:bg-logo-red/90 transition-colors"
             >
               Donar
             </a>
@@ -88,7 +91,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-700 hover:text-teal-600 py-2 transition-colors"
+                className="text-gray-700 hover:text-logo-blue py-2 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
@@ -96,7 +99,7 @@ const Navbar = () => {
             ))}
             <a
               href="#donar"
-              className="button-glow px-5 py-2 bg-teal-600 text-white rounded-full text-center font-medium hover:bg-teal-700 transition-colors"
+              className="button-glow px-5 py-2 bg-logo-red text-white rounded-full text-center font-medium hover:bg-logo-red/90 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Donar

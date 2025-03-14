@@ -1,5 +1,5 @@
 
-import { Heart, Facebook, Instagram, Youtube, MessageSquare } from 'lucide-react';
+import { Facebook, Instagram, Youtube, MessageSquare } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const Footer = () => {
@@ -29,11 +29,17 @@ const Footer = () => {
           {/* Brand Column */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center space-x-2">
-              <Heart className="h-6 w-6 text-teal-600" />
-              <span className="text-xl font-serif font-semibold">Recetando Sonrisas</span>
+              <img 
+                src="/lovable-uploads/9ec22ea9-5959-46cc-bb1d-c5d450e3a0a5.png" 
+                alt="Recetando Sonrisas Logo" 
+                className="h-12"
+              />
             </div>
             <p className="text-muted-foreground">
               Fundación cristiana comprometida con llevar salud y esperanza a comunidades rurales a través del servicio profesional y el amor de Cristo.
+            </p>
+            <p className="text-logo-blue font-medium">
+              JUNTOS EN LA GRAN COMISIÓN
             </p>
             
             {/* Social Media */}
@@ -44,7 +50,7 @@ const Footer = () => {
                   <a 
                     key={link.name}
                     href={link.href}
-                    className="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-gray-200 hover:border-teal-500 hover:text-teal-600 transition-colors"
+                    className="h-10 w-10 flex items-center justify-center rounded-full bg-white border border-gray-200 hover:border-logo-blue hover:text-logo-blue transition-colors"
                     aria-label={link.name}
                   >
                     <Icon className="h-5 w-5" />
@@ -62,7 +68,7 @@ const Footer = () => {
                 <li key={link.name}>
                   <a 
                     href={link.href}
-                    className="text-muted-foreground hover:text-teal-600 transition-colors"
+                    className="text-muted-foreground hover:text-logo-blue transition-colors"
                   >
                     {link.name}
                   </a>
@@ -81,7 +87,7 @@ const Footer = () => {
               </li>
               <li className="flex items-start">
                 <span className="mr-2">✉️</span>
-                <a href="mailto:contacto@recetandosonrisas.org" className="hover:text-teal-600 transition-colors">
+                <a href="mailto:contacto@recetandosonrisas.org" className="hover:text-logo-blue transition-colors">
                   contacto@recetandosonrisas.org
                 </a>
               </li>

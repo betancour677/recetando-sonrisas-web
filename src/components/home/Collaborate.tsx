@@ -42,7 +42,7 @@ const Collaborate = () => {
       id="colaborar" 
       className="py-20"
       style={{
-        background: "linear-gradient(135deg, rgba(238, 250, 248, 1) 0%, rgba(247, 251, 255, 1) 100%)"
+        background: "linear-gradient(135deg, rgba(239, 250, 253, 1) 0%, rgba(247, 251, 255, 1) 100%)"
       }}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -60,8 +60,8 @@ const Collaborate = () => {
                 key={option.id} 
                 className="glass-card rounded-xl p-8 text-center flex flex-col items-center animate-fade-in-slow hover-scale"
               >
-                <div className="rounded-full bg-teal-100 p-4 inline-flex mb-6">
-                  <Icon className="h-8 w-8 text-teal-600" />
+                <div className="rounded-full bg-logo-blue-100 p-4 inline-flex mb-6">
+                  <Icon className="h-8 w-8 text-logo-blue" />
                 </div>
                 <div className="text-2xl font-medium mb-2">
                   {option.id}. {option.title}
@@ -71,7 +71,7 @@ const Collaborate = () => {
                 </p>
                 <a 
                   href={option.action.href}
-                  className="mt-auto px-6 py-3 bg-teal-600 text-white rounded-full inline-flex items-center justify-center hover:bg-teal-700 transition-colors w-full max-w-xs button-glow"
+                  className="mt-auto px-6 py-3 bg-logo-red text-white rounded-full inline-flex items-center justify-center hover:bg-logo-red-700 transition-colors w-full max-w-xs button-glow"
                 >
                   {option.action.text}
                 </a>

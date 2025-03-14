@@ -23,7 +23,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
     )}>
       <div className="inline-flex items-center">
         <div className={cn(
-          'h-1 w-10 bg-teal-500 rounded-full',
+          'h-1 w-10 bg-logo-blue rounded-full',
           centered ? 'mx-auto' : ''
         )} />
       </div>

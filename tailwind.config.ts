@@ -63,31 +63,33 @@ export default {
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
 				},
-				// Custom colors for Recetando Sonrisas
-				teal: {
-					50: '#f0fdfa',
-					100: '#ccfbf1',
-					200: '#99f6e4',
-					300: '#5eead4',
-					400: '#2dd4bf',
-					500: '#14b8a6',
-					600: '#0d9488',
-					700: '#0f766e',
-					800: '#115e59',
-					900: '#134e4a',
+				// Custom colors for Recetando Sonrisas (based on logo)
+				'logo-blue': {
+					DEFAULT: '#33a1cc', // Blue color from the logo
+					50: '#effafd',
+					100: '#dcf3fa',
+					200: '#b2e5f4',
+					300: '#75cfe9',
+					400: '#33b7dc',
+					500: '#33a1cc', // Logo blue
+					600: '#1a81aa',
+					700: '#18688a',
+					800: '#195873',
+					900: '#1a4a61',
 				},
-				blue: {
-					50: '#eff6ff',
-					100: '#dbeafe',
-					200: '#bfdbfe',
-					300: '#93c5fd',
-					400: '#60a5fa',
-					500: '#3b82f6',
-					600: '#2563eb',
-					700: '#1d4ed8',
-					800: '#1e40af',
-					900: '#1e3a8a',
-				}
+				'logo-red': {
+					DEFAULT: '#e62d30', // Red color from the logo heart
+					50: '#fef2f2',
+					100: '#fee2e2',
+					200: '#fecaca',
+					300: '#fca5a5',
+					400: '#f87171',
+					500: '#ef4444',
+					600: '#e62d30', // Logo red
+					700: '#b91c1c',
+					800: '#991b1b',
+					900: '#7f1d1d',
+				},
 			},
 			borderRadius: {
 				lg: 'var(--radius)',
@@ -101,7 +103,7 @@ export default {
 			boxShadow: {
 				subtle: '0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03)',
 				soft: '0 10px 15px -3px rgba(0, 0, 0, 0.05), 0 4px 6px -2px rgba(0, 0, 0, 0.02)',
-				glow: '0 0 15px rgba(93, 211, 196, 0.4)',
+				glow: '0 0 15px rgba(51, 161, 204, 0.4)', // Updated to match logo blue
 			},
 			keyframes: {
 				'accordion-down': {
