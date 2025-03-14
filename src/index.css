@@ -89,7 +89,7 @@
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-serif font-medium tracking-tight;
+    @apply font-serif font-medium tracking-tight text-logo-blue-800;
   }
 
   p, li, a, input, textarea, button {
@@ -125,5 +125,21 @@
   
   .image-loaded {
     @apply opacity-100;
+  }
+
+  .teal-gradient {
+    background: linear-gradient(135deg, rgba(239, 250, 253, 1) 0%, rgba(247, 251, 255, 1) 100%);
+  }
+
+  .blue-gradient {
+    background: linear-gradient(135deg, rgba(233, 246, 253, 1) 0%, rgba(241, 248, 255, 1) 100%);
+  }
+
+  .form-input-focus {
+    @apply focus:border-logo-blue focus:ring-1 focus:ring-logo-blue focus:outline-none;
+  }
+
+  .send-button {
+    @apply bg-logo-blue hover:bg-logo-blue-600 text-white font-medium py-3 px-6 rounded-full transition-colors;
   }
 }

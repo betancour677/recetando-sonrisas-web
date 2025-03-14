@@ -27,7 +27,7 @@ const SectionHeading: React.FC<SectionHeadingProps> = ({
           centered ? 'mx-auto' : ''
         )} />
       </div>
-      <h2 className="text-3xl md:text-4xl font-medium text-balance">{title}</h2>
+      <h2 className="text-3xl md:text-4xl font-medium text-balance text-logo-blue-800">{title}</h2>
       {subtitle && (
         <p className="text-lg text-muted-foreground max-w-3xl text-balance mx-auto">
           {subtitle}

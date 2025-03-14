@@ -18,13 +18,13 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 }) => {
   return (
     <div className={cn(
-      'glass-card rounded-xl p-6 hover-scale',
+      'glass-card rounded-xl p-6 hover-scale shadow-soft',
       className
     )}>
       <div className="mb-4 inline-flex items-center justify-center w-12 h-12 rounded-full bg-logo-blue-100">
         <Icon className="h-6 w-6 text-logo-blue" />
       </div>
-      <h3 className="text-xl font-medium mb-2">{title}</h3>
+      <h3 className="text-xl font-medium mb-2 text-logo-blue-800">{title}</h3>
       <p className="text-muted-foreground">{description}</p>
     </div>
   );
