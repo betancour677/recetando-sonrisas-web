@@ -8,6 +8,8 @@ import Services from '@/components/home/Services';
 import Impact from '@/components/home/Impact';
 import Collaborate from '@/components/home/Collaborate';
 import Contact from '@/components/home/Contact';
+import UpcomingOperations from '@/components/home/UpcomingOperations';
+import Testimonials from '@/components/home/Testimonials';
 
 const Index = () => {
   // Smooth scroll behavior for anchor links
@@ -49,7 +51,9 @@ const Index = () => {
         <Hero />
         <About />
         <Services />
+        <UpcomingOperations />
         <Impact />
+        <Testimonials />
         <Collaborate />
         <Contact />
       </main>
