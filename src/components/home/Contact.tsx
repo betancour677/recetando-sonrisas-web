@@ -1,5 +1,5 @@
+
 import { useState } from 'react';
-import { Mail } from 'lucide-react';
 import SectionHeading from '../ui/SectionHeading';
 
 const Contact = () => {
@@ -42,16 +42,6 @@ const Contact = () => {
       }, 3000);
     }, 1000);
   };
-  
-  // Contact info - only keeping email
-  const contactInfo = [
-    {
-      icon: Mail,
-      title: 'Email',
-      details: 'contacto@recetandosonrisas.org',
-      href: 'mailto:contacto@recetandosonrisas.org'
-    }
-  ];
 
   return (
     <section id="contacto" className="py-20 bg-white">
@@ -61,32 +51,10 @@ const Contact = () => {
           subtitle="Estamos aquí para responder tus preguntas, recibir tus propuestas de colaboración o coordinar un operativo médico en tu comunidad."
         />
         
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-12">
-          <div className="space-y-8 animate-fade-in">
-            <div className="flex justify-center">
-              {contactInfo.map((item, index) => {
-                const Icon = item.icon;
-                
-                return (
-                  <a 
-                    key={index}
-                    href={item.href}
-                    className="glass-card rounded-xl p-6 text-center flex flex-col items-center hover-scale max-w-xs w-full"
-                  >
-                    <div className="rounded-full bg-logo-blue-100 p-3 inline-flex mb-4">
-                      <Icon className="h-6 w-6 text-logo-blue" />
-                    </div>
-                    <div className="font-medium mb-1">{item.title}</div>
-                    <div className="text-sm text-muted-foreground">{item.details}</div>
-                  </a>
-                );
-              })}
-            </div>
-          </div>
-          
-          <div className="animate-fade-in-slow">
+        <div className="flex justify-center mt-12">
+          <div className="w-full max-w-lg animate-fade-in-slow">
             <div className="glass-card rounded-xl p-8 border border-gray-100">
-              <h3 className="text-xl font-medium mb-6">Formulario de contacto</h3>
+              <h3 className="text-xl font-medium mb-6 text-center">Formulario de contacto</h3>
               
               {isSubmitted ? (
                 <div className="text-center py-8">
