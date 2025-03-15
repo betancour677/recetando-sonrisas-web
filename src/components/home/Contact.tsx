@@ -86,8 +86,8 @@ const Contact = () => {
                     href={item.href}
                     className="glass-card rounded-xl p-4 text-center flex flex-col items-center hover-scale"
                   >
-                    <div className="rounded-full bg-teal-100 p-3 inline-flex mb-4">
-                      <Icon className="h-6 w-6 text-teal-600" />
+                    <div className="rounded-full bg-logo-blue-100 p-3 inline-flex mb-4">
+                      <Icon className="h-6 w-6 text-logo-blue" />
                     </div>
                     <div className="font-medium mb-1">{item.title}</div>
                     <div className="text-sm text-muted-foreground">{item.details}</div>
@@ -117,8 +117,8 @@ const Contact = () => {
               
               {isSubmitted ? (
                 <div className="text-center py-8">
-                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-teal-100 mb-4">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-8 w-8 text-teal-600">
+                  <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-logo-blue-100 mb-4">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="h-8 w-8 text-logo-blue">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                     </svg>
                   </div>
@@ -141,7 +141,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-logo-blue"
                       />
                     </div>
                     <div>
@@ -155,7 +155,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-logo-blue"
                       />
                     </div>
                   </div>
@@ -171,7 +171,7 @@ const Contact = () => {
                         name="phone"
                         value={formData.phone}
                         onChange={handleChange}
-                        className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-logo-blue"
                       />
                     </div>
                     <div>
@@ -184,7 +184,7 @@ const Contact = () => {
                         value={formData.subject}
                         onChange={handleChange}
                         required
-                        className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                        className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-logo-blue"
                       >
                         <option value="">Selecciona un asunto</option>
                         <option value="donaciones">Información sobre donaciones</option>
@@ -207,14 +207,14 @@ const Contact = () => {
                       onChange={handleChange}
                       required
                       rows={5}
-                      className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-teal-500"
+                      className="w-full px-4 py-2 border border-gray-200 rounded-lg focus:outline-none focus:ring-2 focus:ring-logo-blue"
                     ></textarea>
                   </div>
                   
                   <button
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full px-6 py-3 bg-teal-600 text-white rounded-full hover:bg-teal-700 transition-colors button-glow disabled:opacity-70"
+                    className="w-full px-6 py-3 bg-logo-blue text-white rounded-full hover:bg-logo-blue-600 transition-colors button-glow disabled:opacity-70"
                   >
                     {isSubmitting ? 'Enviando...' : 'Enviar mensaje'}
                   </button>

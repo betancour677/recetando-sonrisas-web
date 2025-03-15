@@ -48,7 +48,7 @@ const Testimonials = () => {
       id="testimonios" 
       className="py-20"
       style={{
-        background: "linear-gradient(135deg, rgba(247, 251, 255, 1) 0%, rgba(238, 250, 248, 1) 100%)"
+        background: "linear-gradient(135deg, rgba(239, 250, 253, 1) 0%, rgba(233, 246, 253, 1) 100%)"
       }}
     >
       <div className="container mx-auto px-4 md:px-6">
@@ -64,7 +64,7 @@ const Testimonials = () => {
                 <TabsTrigger
                   key={testimonial.id}
                   value={testimonial.id.toString()}
-                  className="rounded-full data-[state=active]:bg-teal-500 data-[state=active]:text-white"
+                  className="rounded-full data-[state=active]:bg-logo-blue data-[state=active]:text-white"
                 >
                   Operativo {testimonial.id}
                 </TabsTrigger>
@@ -75,7 +75,7 @@ const Testimonials = () => {
               <TabsContent key={testimonial.id} value={testimonial.id.toString()} className="animate-fade-in">
                 <Card className="overflow-hidden border-0 shadow-soft">
                   <div className="grid md:grid-cols-2 gap-6">
-                    <div className="relative h-[300px] md:h-full bg-blue-100">
+                    <div className="relative h-[300px] md:h-full bg-logo-blue-100">
                       <img
                         src={testimonial.image}
                         alt={testimonial.title}
@@ -83,24 +83,24 @@ const Testimonials = () => {
                       />
                     </div>
                     <CardContent className="p-6">
-                      <div className="flex items-center gap-2 text-teal-600 mb-3">
+                      <div className="flex items-center gap-2 text-logo-blue mb-3">
                         <Calendar className="h-4 w-4" />
                         <span className="text-sm">{testimonial.date}</span>
                       </div>
                       
-                      <h3 className="text-2xl font-semibold text-blue-900 mb-4">{testimonial.title}</h3>
+                      <h3 className="text-2xl font-semibold text-logo-blue-800 mb-4">{testimonial.title}</h3>
                       <p className="text-gray-600 mb-6">{testimonial.content}</p>
                       
-                      <blockquote className="border-l-4 border-teal-500 pl-4 italic text-gray-600 mb-6">
+                      <blockquote className="border-l-4 border-logo-blue pl-4 italic text-gray-600 mb-6">
                         {testimonial.testimonial}
                       </blockquote>
                       
                       <div className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-full bg-teal-100 flex items-center justify-center">
-                          <User className="h-5 w-5 text-teal-600" />
+                        <div className="w-10 h-10 rounded-full bg-logo-blue-100 flex items-center justify-center">
+                          <User className="h-5 w-5 text-logo-blue" />
                         </div>
                         <div>
-                          <p className="font-medium text-blue-900">{testimonial.author}</p>
+                          <p className="font-medium text-logo-blue-800">{testimonial.author}</p>
                           <p className="text-sm text-gray-500">{testimonial.role}</p>
                         </div>
                       </div>
