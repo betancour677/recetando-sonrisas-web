@@ -10,6 +10,7 @@ import Collaborate from '@/components/home/Collaborate';
 import Contact from '@/components/home/Contact';
 import UpcomingOperations from '@/components/home/UpcomingOperations';
 import Testimonials from '@/components/home/Testimonials';
+import ImageGallery from '@/components/home/ImageGallery';
 
 const Index = () => {
   // Smooth scroll behavior for anchor links
@@ -53,6 +54,7 @@ const Index = () => {
         <Services />
         <UpcomingOperations />
         <Impact />
+        <ImageGallery />
         <Testimonials />
         <Collaborate />
         <Contact />

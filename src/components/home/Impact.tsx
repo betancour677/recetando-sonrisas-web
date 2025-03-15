@@ -18,8 +18,8 @@ const Impact = () => {
               <div className="absolute -left-4 -top-4 w-24 h-24 bg-teal-100 rounded-tl-3xl z-0"></div>
               <div className="relative z-10 rounded-2xl overflow-hidden shadow-soft">
                 <BlurImage
-                  src="https://images.unsplash.com/photo-1527613426441-4da17471b66d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80"
-                  alt="Familia beneficiada por Recetando Sonrisas"
+                  src="/lovable-uploads/7c01bba7-adb0-4726-8484-cda127593e87.png"
+                  alt="Profesional de la salud atendiendo a un paciente"
                   className="w-full h-[400px] object-cover"
                 />
               </div>
@@ -51,22 +51,22 @@ const Impact = () => {
             <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mt-8">
               <div className="rounded-xl overflow-hidden shadow-sm hover-scale">
                 <BlurImage
-                  src="https://images.unsplash.com/photo-1576765607924-3f7b8410a787?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
-                  alt="Operativo médico 1"
+                  src="/lovable-uploads/7b9b5eac-b06d-4843-95fb-e98ed171c5bd.png"
+                  alt="Operativo médico dental"
                   className="w-full h-32 object-cover"
                 />
               </div>
               <div className="rounded-xl overflow-hidden shadow-sm hover-scale">
                 <BlurImage
-                  src="https://images.unsplash.com/photo-1631815587646-b85a1bb027e3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
-                  alt="Operativo médico 2"
+                  src="/lovable-uploads/45245862-ff20-4f18-b7c4-d66bdf729f76.png"
+                  alt="Atención a niños en una comunidad"
                   className="w-full h-32 object-cover"
                 />
               </div>
               <div className="rounded-xl overflow-hidden shadow-sm hover-scale">
                 <BlurImage
-                  src="https://images.unsplash.com/photo-1611501282809-03a5bba63172?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
-                  alt="Operativo médico 3"
+                  src="/lovable-uploads/3550c269-abc1-40d5-a3a3-90583d00d857.png"
+                  alt="Jornada médica en exterior"
                   className="w-full h-32 object-cover"
                 />
               </div>

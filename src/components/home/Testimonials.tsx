@@ -15,7 +15,7 @@ const testimonials = [
     content: 'El pasado 12 de marzo, nuestro equipo de voluntarios visitó la comunidad rural de Santa Rosa para brindar atención médica gratuita. Más de 200 personas de todas las edades pudieron acceder a servicios básicos de salud que normalmente no están disponibles en la zona. Se realizaron consultas de medicina general, dental, oftalmológica y psicológica. Además, se entregaron medicamentos gratuitos y se organizaron charlas educativas sobre prevención de enfermedades comunes.',
     author: 'Dra. Carmen Fuentes',
     role: 'Coordinadora de Operativos',
-    image: 'lovable-uploads/0be9fab3-4643-4f15-80f9-9dc5f274375c.png',
+    image: '/lovable-uploads/8ac3047a-41ff-4921-8ebc-88a9ec3a395a.png',
     testimonial: '"Estoy muy agradecida por la atención que recibimos. Mi hijo necesitaba lentes y gracias a ustedes ahora puede ver mejor y seguir con sus estudios. Dios les bendiga por su labor." - María González, madre de familia'
   },
   {
@@ -26,7 +26,7 @@ const testimonials = [
     content: 'La comunidad de El Naranjo recibió a nuestro equipo de voluntarios para una jornada completa de atención en salud. Se realizaron 150 atenciones entre medicina general, dental, y oftalmología. Los voluntarios también organizaron actividades recreativas para los niños y compartieron el mensaje de esperanza con todos los asistentes. La iglesia local colaboró activamente en la organización y logística del evento, demostrando el poder del trabajo conjunto en beneficio de la comunidad.',
     author: 'Pastor Roberto Méndez',
     role: 'Iglesia Anfitriona',
-    image: 'lovable-uploads/0be9fab3-4643-4f15-80f9-9dc5f274375c.png',
+    image: '/lovable-uploads/4479e669-090c-426a-9b7f-8c657f20e93e.png',
     testimonial: '"Nunca había tenido la oportunidad de visitar al dentista por los costos. Hoy pude solucionar un problema que tenía hace años. Gracias por venir a nuestra comunidad." - Juan Pérez, agricultor local'
   },
   {
@@ -37,7 +37,7 @@ const testimonials = [
     content: 'En respuesta a las necesidades específicas identificadas en Rucalhue, organizamos un operativo especial enfocado en la atención de adultos mayores. Se realizaron controles de presión arterial, exámenes de vista, evaluaciones de movilidad y consultas médicas generales. Los especialistas en geriatría y kinesiología brindaron asesoramiento personalizado a cada paciente. También se entregaron bastones, lentes y medicamentos a quienes lo necesitaban. La jornada finalizó con un momento de oración y compartir comunitario.',
     author: 'Dra. Isabel Moreno',
     role: 'Geriatra Voluntaria',
-    image: 'lovable-uploads/0be9fab3-4643-4f15-80f9-9dc5f274375c.png',
+    image: '/lovable-uploads/3fc919a8-161a-489e-9822-afe81e3f5500.png',
     testimonial: '"A mis 78 años, ya me había resignado a no ver bien. Gracias a ustedes, ahora puedo leer mi Biblia nuevamente. No tienen idea de lo que significa para mí." - Doña Carmen, 78 años'
   }
 ];

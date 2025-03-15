@@ -53,8 +53,8 @@ const Hero = () => {
           
           <div className="relative h-[400px] md:h-[450px] lg:h-[500px] rounded-2xl overflow-hidden shadow-soft animate-scale-in">
             <img 
-              src="https://images.unsplash.com/photo-1576091160550-2173dba999ef?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80" 
-              alt="Personal médico atendiendo en comunidad rural" 
+              src="/lovable-uploads/47f45428-e2a7-4146-9f2e-c23958298903.png" 
+              alt="Equipo médico atendiendo en operativo" 
               className="w-full h-full object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30"></div>
