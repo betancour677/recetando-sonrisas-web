@@ -3,13 +3,13 @@ import { useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
 import Hero from '@/components/home/Hero';
-import About from '@/components/home/About';
 import Services from '@/components/home/Services';
 import Collaborate from '@/components/home/Collaborate';
 import Contact from '@/components/home/Contact';
 import UpcomingOperations from '@/components/home/UpcomingOperations';
 import Testimonials from '@/components/home/Testimonials';
 import ImageGallery from '@/components/home/ImageGallery';
+import About from '@/components/home/About';
 
 const Index = () => {
   // Smooth scroll behavior for anchor links
