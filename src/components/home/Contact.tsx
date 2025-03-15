@@ -1,6 +1,5 @@
-
 import { useState } from 'react';
-import { PhoneCall, Mail, MapPin } from 'lucide-react';
+import { Mail } from 'lucide-react';
 import SectionHeading from '../ui/SectionHeading';
 
 const Contact = () => {
@@ -44,25 +43,13 @@ const Contact = () => {
     }, 1000);
   };
   
-  // Contact info
+  // Contact info - only keeping email
   const contactInfo = [
-    {
-      icon: PhoneCall,
-      title: 'Teléfono',
-      details: '+56 9 1234 5678',
-      href: 'tel:+56912345678'
-    },
     {
       icon: Mail,
       title: 'Email',
       details: 'contacto@recetandosonrisas.org',
       href: 'mailto:contacto@recetandosonrisas.org'
-    },
-    {
-      icon: MapPin,
-      title: 'Dirección',
-      details: 'Oficina central: Calle Principal 123, Ciudad',
-      href: '#'
     }
   ];
 
@@ -76,7 +63,7 @@ const Contact = () => {
         
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 mt-12">
           <div className="space-y-8 animate-fade-in">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            <div className="flex justify-center">
               {contactInfo.map((item, index) => {
                 const Icon = item.icon;
                 
@@ -84,7 +71,7 @@ const Contact = () => {
                   <a 
                     key={index}
                     href={item.href}
-                    className="glass-card rounded-xl p-4 text-center flex flex-col items-center hover-scale"
+                    className="glass-card rounded-xl p-6 text-center flex flex-col items-center hover-scale max-w-xs w-full"
                   >
                     <div className="rounded-full bg-logo-blue-100 p-3 inline-flex mb-4">
                       <Icon className="h-6 w-6 text-logo-blue" />
@@ -94,20 +81,6 @@ const Contact = () => {
                   </a>
                 );
               })}
-            </div>
-            
-            <div 
-              className="relative rounded-2xl overflow-hidden h-[300px] shadow-sm"
-              style={{ 
-                background: `url('https://maps.googleapis.com/maps/api/staticmap?center=Santiago,Chile&zoom=14&size=600x300&maptype=roadmap&markers=color:red%7CSantiago,Chile&key=YOUR_API_KEY') no-repeat center/cover`
-              }}
-            >
-              <div className="absolute inset-0 flex items-center justify-center bg-gray-200/60">
-                <div className="text-center p-4 max-w-xs">
-                  <h3 className="text-lg font-medium mb-2">Mapa de ubicación</h3>
-                  <p className="text-sm text-muted-foreground">Oficina central: Calle Principal 123, Ciudad</p>
-                </div>
-              </div>
             </div>
           </div>
           

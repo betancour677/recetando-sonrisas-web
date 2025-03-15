@@ -77,23 +77,15 @@ const Footer = () => {
             </ul>
           </div>
           
-          {/* Contact Info */}
+          {/* Contact Info - Only Email */}
           <div className="md:col-span-4">
             <h4 className="text-lg font-medium mb-4">Contáctanos</h4>
             <ul className="space-y-3 text-muted-foreground">
-              <li className="flex items-start">
-                <span className="mr-2">📞</span>
-                <span>+56 9 1234 5678</span>
-              </li>
               <li className="flex items-start">
                 <span className="mr-2">✉️</span>
                 <a href="mailto:contacto@recetandosonrisas.org" className="hover:text-logo-blue transition-colors">
                   contacto@recetandosonrisas.org
                 </a>
-              </li>
-              <li className="flex items-start">
-                <span className="mr-2">📍</span>
-                <span>Oficina central: Calle Principal 123, Ciudad</span>
               </li>
             </ul>
           </div>
