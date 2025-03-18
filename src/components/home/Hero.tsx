@@ -82,25 +82,21 @@ const Hero = () => {
           </div>
           
           <div className="relative h-[400px] md:h-[450px] lg:h-[500px] rounded-2xl overflow-hidden shadow-soft animate-scale-in">
-            <Carousel className="w-full h-full" opts={{ loop: true }}>
-              <CarouselContent className="h-full">
-                {heroImages.map((image, index) => (
-                  <CarouselItem key={index} className="h-full">
-                    <div 
-                      className={`h-full w-full transition-opacity duration-1000 absolute inset-0 ${
-                        index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
-                      }`}
-                    >
-                      <img 
-                        src={image.src} 
-                        alt={image.alt} 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                  </CarouselItem>
-                ))}
-              </CarouselContent>
-            </Carousel>
+            {heroImages.map((image, index) => (
+              <div 
+                key={index} 
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                }`}
+              >
+                <img 
+                  src={image.src} 
+                  alt={image.alt} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ))}
+            
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 z-20"></div>
             
             {/* Indicadores de posición */}
