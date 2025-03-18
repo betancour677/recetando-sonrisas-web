@@ -9,20 +9,20 @@ import { useEffect, useState } from 'react';
 
 const heroImages = [
   {
-    src: "/lovable-uploads/47f45428-e2a7-4146-9f2e-c23958298903.png",
-    alt: "Equipo médico atendiendo en operativo"
+    src: "/lovable-uploads/5804ba12-945d-4b4b-b2ad-b0dca0ddc9d6.png",
+    alt: "Médico atendiendo a niño en operativo"
   },
   {
-    src: "/lovable-uploads/7c01bba7-adb0-4726-8484-cda127593e87.png",
-    alt: "Médico atendiendo a paciente en operativo"
+    src: "/lovable-uploads/14478540-4401-4505-9ea4-8433bd2b2cc6.png",
+    alt: "Registro de pacientes en comunidad rural"
   },
   {
-    src: "/lovable-uploads/3fc919a8-161a-489e-9822-afe81e3f5500.png",
-    alt: "Atención médica a niños en operativo"
+    src: "/lovable-uploads/33b75294-f6fb-44ae-afca-3a8a6670fd16.png",
+    alt: "Atención médica dental en operativo"
   },
   {
-    src: "/lovable-uploads/45245862-ff20-4f18-b7c4-d66bdf729f76.png",
-    alt: "Actividades con niños en comunidad"
+    src: "/lovable-uploads/78521b81-e92b-4aa1-b3da-bb53e7f4d61f.png",
+    alt: "Doctora atendiendo a niña en operativo"
   }
 ];
 
