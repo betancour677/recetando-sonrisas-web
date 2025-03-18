@@ -2,15 +2,16 @@
 import { useState } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import SectionHeading from "../ui/SectionHeading";
-import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
+// Reusing the same images from Hero.tsx
 const images = [
   {
-    src: "/lovable-uploads/7b9b5eac-b06d-4843-95fb-e98ed171c5bd.png",
-    alt: "Atención dental en operativo médico",
-    description: "Nuestros dentistas voluntarios brindando atención dental gratuita en comunidades rurales."
+    src: "/lovable-uploads/47f45428-e2a7-4146-9f2e-c23958298903.png",
+    alt: "Equipo médico atendiendo en operativo",
+    description: "Nuestros profesionales de la salud trabajando en conjunto durante un operativo médico en una comunidad rural."
   },
   {
     src: "/lovable-uploads/7c01bba7-adb0-4726-8484-cda127593e87.png",
@@ -18,9 +19,20 @@ const images = [
     description: "Profesionales de la salud dedicados a brindar consultas médicas durante los operativos."
   },
   {
+    src: "/lovable-uploads/3fc919a8-161a-489e-9822-afe81e3f5500.png",
+    alt: "Atención médica a niños en operativo",
+    description: "Atención pediátrica especializada para los más pequeños de las comunidades rurales."
+  },
+  {
     src: "/lovable-uploads/45245862-ff20-4f18-b7c4-d66bdf729f76.png",
     alt: "Actividades con niños en comunidad",
     description: "Actividades recreativas y educativas con niños mientras sus padres reciben atención médica."
+  },
+  // Manteniendo algunas imágenes adicionales de la galería original
+  {
+    src: "/lovable-uploads/7b9b5eac-b06d-4843-95fb-e98ed171c5bd.png",
+    alt: "Atención dental en operativo médico",
+    description: "Nuestros dentistas voluntarios brindando atención dental gratuita en comunidades rurales."
   },
   {
     src: "/lovable-uploads/3550c269-abc1-40d5-a3a3-90583d00d857.png",
@@ -31,16 +43,6 @@ const images = [
     src: "/lovable-uploads/4479e669-090c-426a-9b7f-8c657f20e93e.png",
     alt: "Equipo médico trabajando en terreno",
     description: "Nuestro equipo médico adaptándose a las condiciones locales para brindar atención de calidad."
-  },
-  {
-    src: "/lovable-uploads/47f45428-e2a7-4146-9f2e-c23958298903.png",
-    alt: "Equipo de voluntarios de Recetando Sonrisas",
-    description: "El corazón de nuestra organización: los voluntarios que hacen posible cada operativo médico."
-  },
-  {
-    src: "/lovable-uploads/3fc919a8-161a-489e-9822-afe81e3f5500.png",
-    alt: "Atención médica a niños en operativo",
-    description: "Atención pediátrica especializada para los más pequeños de las comunidades rurales."
   },
   {
     src: "/lovable-uploads/8ac3047a-41ff-4921-8ebc-88a9ec3a395a.png",
@@ -106,6 +108,10 @@ const ImageGallery = () => {
         <DialogContent className="max-w-4xl p-0 overflow-hidden bg-black/90">
           {selectedImage !== null && (
             <div className="relative">
+              <DialogTitle className="sr-only">
+                {images[selectedImage].alt}
+              </DialogTitle>
+              
               <div className="flex items-center justify-center h-[80vh]">
                 <img 
                   src={images[selectedImage].src} 
