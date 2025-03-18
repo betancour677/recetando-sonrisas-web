@@ -1,7 +1,43 @@
 
 import { ArrowRight } from 'lucide-react';
+import { 
+  Carousel, 
+  CarouselContent, 
+  CarouselItem 
+} from "@/components/ui/carousel";
+import { useEffect, useState } from 'react';
+
+const heroImages = [
+  {
+    src: "/lovable-uploads/47f45428-e2a7-4146-9f2e-c23958298903.png",
+    alt: "Equipo médico atendiendo en operativo"
+  },
+  {
+    src: "/lovable-uploads/7c01bba7-adb0-4726-8484-cda127593e87.png",
+    alt: "Médico atendiendo a paciente en operativo"
+  },
+  {
+    src: "/lovable-uploads/3fc919a8-161a-489e-9822-afe81e3f5500.png",
+    alt: "Atención médica a niños en operativo"
+  },
+  {
+    src: "/lovable-uploads/45245862-ff20-4f18-b7c4-d66bdf729f76.png",
+    alt: "Actividades con niños en comunidad"
+  }
+];
 
 const Hero = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  
+  // Auto-rotate images
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % heroImages.length);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, []);
+
   return (
     <section 
       id="inicio" 
@@ -36,28 +72,46 @@ const Hero = () => {
             
             <div className="flex flex-wrap gap-4 animate-fade-in">
               <a 
-                href="#servicios" 
+                href="#colaborar" 
                 className="px-6 py-3 bg-logo-blue text-white rounded-full inline-flex items-center space-x-2 hover:bg-logo-blue-600 transition-colors shadow-sm button-glow"
               >
-                <span>Conoce nuestros servicios</span>
+                <span>Colaborar</span>
                 <ArrowRight className="h-4 w-4" />
-              </a>
-              <a 
-                href="#colaborar" 
-                className="px-6 py-3 bg-logo-red-50 text-logo-red-700 border border-logo-red-200 rounded-full inline-flex items-center space-x-2 hover:bg-logo-red-100 transition-colors shadow-sm"
-              >
-                <span>¿Cómo puedo ayudar?</span>
               </a>
             </div>
           </div>
           
           <div className="relative h-[400px] md:h-[450px] lg:h-[500px] rounded-2xl overflow-hidden shadow-soft animate-scale-in">
-            <img 
-              src="/lovable-uploads/47f45428-e2a7-4146-9f2e-c23958298903.png" 
-              alt="Equipo médico atendiendo en operativo" 
-              className="w-full h-full object-cover"
-            />
+            <Carousel className="w-full h-full" opts={{ loop: true }}>
+              <CarouselContent className="h-full">
+                {heroImages.map((image, index) => (
+                  <CarouselItem key={index} className={`h-full ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}>
+                    <div className="h-full w-full transition-opacity duration-1000">
+                      <img 
+                        src={image.src} 
+                        alt={image.alt} 
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+            </Carousel>
             <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30"></div>
+            
+            {/* Indicadores de posición */}
+            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
+              {heroImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentSlide(index)}
+                  className={`w-2.5 h-2.5 rounded-full transition-all ${
+                    index === currentSlide ? 'bg-white scale-110' : 'bg-white/50'
+                  }`}
+                  aria-label={`Ir a la imagen ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
