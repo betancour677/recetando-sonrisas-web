@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { AspectRatio } from "@/components/ui/aspect-ratio";
 import SectionHeading from "../ui/SectionHeading";
-import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Dialog, DialogContent, DialogClose } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
@@ -103,7 +103,7 @@ const ImageGallery = () => {
       
       {/* Modal para ver imágenes */}
       <Dialog open={selectedImage !== null} onOpenChange={(open) => !open && closeModal()}>
-        <DialogContent className="max-w-4xl p-0 overflow-hidden bg-black/90" hideCloseButton>
+        <DialogContent className="max-w-4xl p-0 overflow-hidden bg-black/90">
           {selectedImage !== null && (
             <div className="relative">
               <div className="flex items-center justify-center h-[80vh]">
