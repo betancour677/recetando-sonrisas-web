@@ -85,8 +85,12 @@ const Hero = () => {
             <Carousel className="w-full h-full" opts={{ loop: true }}>
               <CarouselContent className="h-full">
                 {heroImages.map((image, index) => (
-                  <CarouselItem key={index} className={`h-full ${index === currentSlide ? 'opacity-100' : 'opacity-0'}`}>
-                    <div className="h-full w-full transition-opacity duration-1000">
+                  <CarouselItem key={index} className="h-full">
+                    <div 
+                      className={`h-full w-full transition-opacity duration-1000 absolute inset-0 ${
+                        index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                      }`}
+                    >
                       <img 
                         src={image.src} 
                         alt={image.alt} 
@@ -97,10 +101,10 @@ const Hero = () => {
                 ))}
               </CarouselContent>
             </Carousel>
-            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30"></div>
+            <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/30 z-20"></div>
             
             {/* Indicadores de posición */}
-            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-10">
+            <div className="absolute bottom-4 left-0 right-0 flex justify-center gap-2 z-30">
               {heroImages.map((_, index) => (
                 <button
                   key={index}
