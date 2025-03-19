@@ -21,13 +21,15 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Navigation links
+  // Updated navigation links to match the current order of sections
   const navLinks = [
     { name: 'Inicio', href: '#inicio' },
+    { name: 'Próximos Operativos', href: '#proximos-operativos' },
     { name: 'Nosotros', href: '#nosotros' },
-    { name: 'Servicios', href: '#servicios' },
-    { name: 'Impacto', href: '#impacto' },
+    { name: 'Testimonios', href: '#testimonios' },
     { name: 'Colaborar', href: '#colaborar' },
+    { name: 'Servicios', href: '#servicios' },
+    { name: 'Galería', href: '#galeria' },
     { name: 'Contacto', href: '#contacto' },
   ];
 
@@ -50,7 +52,7 @@ const Navbar = () => {
           </a>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             {navLinks.map((link) => (
               <a
                 key={link.name}
