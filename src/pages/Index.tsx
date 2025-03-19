@@ -1,4 +1,3 @@
-
 import { useEffect } from 'react';
 import Navbar from '@/components/layout/Navbar';
 import Footer from '@/components/layout/Footer';
@@ -49,12 +48,11 @@ const Index = () => {
       
       <main className="flex-grow">
         <Hero />
-        <About />
-        <Services />
         <UpcomingOperations />
-        <ImageGallery />
+        <About />
         <Testimonials />
         <Collaborate />
+        <ImageGallery />
         <Contact />
       </main>
       

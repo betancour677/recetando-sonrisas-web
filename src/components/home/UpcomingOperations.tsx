@@ -1,23 +1,19 @@
 
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { 
   Calendar, 
   Clock, 
   MapPin, 
   Stethoscope, 
   Scissors, 
-  Eye 
+  Eye,
+  ChevronLeft,
+  ChevronRight
 } from 'lucide-react';
 import SectionHeading from '../ui/SectionHeading';
 import { Badge } from '../ui/badge';
 import { Card, CardContent } from '../ui/card';
-import { 
-  Carousel, 
-  CarouselContent, 
-  CarouselItem, 
-  CarouselNext, 
-  CarouselPrevious 
-} from '../ui/carousel';
+import { Button } from '../ui/button';
 
 // Sample data for upcoming operations
 const operations = [
@@ -65,6 +61,27 @@ const getServiceIcon = (service: string) => {
 };
 
 const UpcomingOperations = () => {
+  const [currentOperationIndex, setCurrentOperationIndex] = useState(0);
+  
+  // Auto-rotate operations
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentOperationIndex((prevIndex) => (prevIndex + 1) % operations.length);
+    }, 8000);
+    
+    return () => clearInterval(interval);
+  }, []);
+  
+  const currentOperation = operations[currentOperationIndex];
+  
+  const goToNextOperation = () => {
+    setCurrentOperationIndex((prevIndex) => (prevIndex + 1) % operations.length);
+  };
+  
+  const goToPrevOperation = () => {
+    setCurrentOperationIndex((prevIndex) => (prevIndex - 1 + operations.length) % operations.length);
+  };
+
   return (
     <section 
       id="proximos-operativos" 
@@ -77,59 +94,84 @@ const UpcomingOperations = () => {
         />
         
         <div className="mt-12">
-          <Carousel
-            opts={{
-              align: "start",
-              loop: true,
-            }}
-            className="w-full"
-          >
-            <CarouselContent>
-              {operations.map((operation) => (
-                <CarouselItem key={operation.id} className="md:basis-1/2 lg:basis-1/3 pl-4">
-                  <Card className="h-full border border-blue-100 shadow-soft overflow-hidden hover-scale">
-                    <CardContent className="p-6">
-                      <h3 className="text-xl font-semibold text-blue-900 mb-2">{operation.title}</h3>
-                      <p className="text-gray-600 mb-4">{operation.description}</p>
-                      
-                      <div className="space-y-3 text-gray-600">
-                        <div className="flex items-center gap-2">
-                          <Calendar className="text-teal-600 h-5 w-5" />
-                          <span>{operation.date}</span>
-                        </div>
-                        
-                        <div className="flex items-center gap-2">
-                          <Clock className="text-teal-600 h-5 w-5" />
-                          <span>{operation.time}</span>
-                        </div>
-                        
-                        <div className="flex items-center gap-2">
-                          <MapPin className="text-teal-600 h-5 w-5" />
-                          <span>{operation.location}</span>
-                        </div>
-                      </div>
-                      
-                      <div className="mt-4">
-                        <p className="text-sm font-medium mb-2">Servicios disponibles:</p>
-                        <div className="flex flex-wrap gap-2">
-                          {operation.services.map((service, idx) => (
-                            <Badge key={idx} variant="secondary" className="bg-blue-100 text-blue-800 hover:bg-blue-200">
-                              {getServiceIcon(service)}
-                              <span>{service}</span>
-                            </Badge>
-                          ))}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <div className="hidden md:flex justify-end gap-2 mt-6">
-              <CarouselPrevious className="relative static left-auto right-auto translate-y-0" />
-              <CarouselNext className="relative static left-auto right-auto translate-y-0" />
+          <div className="max-w-2xl mx-auto relative">
+            <Card className="border border-blue-100 shadow-soft overflow-hidden animate-fade-in-slow">
+              <div className="relative">
+                <CardContent className="p-6">
+                  <h3 className="text-xl font-semibold text-blue-900 mb-2">{currentOperation.title}</h3>
+                  <p className="text-gray-600 mb-4">{currentOperation.description}</p>
+                  
+                  <div className="space-y-3 text-gray-600">
+                    <div className="flex items-center gap-2">
+                      <Calendar className="text-teal-600 h-5 w-5" />
+                      <span>{currentOperation.date}</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-2">
+                      <Clock className="text-teal-600 h-5 w-5" />
+                      <span>{currentOperation.time}</span>
+                    </div>
+                    
+                    <div className="flex items-center gap-2">
+                      <MapPin className="text-teal-600 h-5 w-5" />
+                      <span>{currentOperation.location}</span>
+                    </div>
+                  </div>
+                  
+                  <div className="mt-4">
+                    <p className="text-sm font-medium mb-2">Servicios disponibles:</p>
+                    <div className="flex flex-wrap gap-2">
+                      {currentOperation.services.map((service, idx) => (
+                        <Badge key={idx} variant="secondary" className="bg-blue-100 text-blue-800 hover:bg-blue-200">
+                          {getServiceIcon(service)}
+                          <span>{service}</span>
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+                </CardContent>
+              </div>
+            </Card>
+            
+            {/* Navigation controls */}
+            <div className="flex justify-center gap-2 mt-6">
+              <Button 
+                variant="outline" 
+                size="icon" 
+                onClick={goToPrevOperation}
+                className="rounded-full bg-white/80 backdrop-blur-sm hover:bg-white border border-blue-100"
+              >
+                <ChevronLeft className="h-4 w-4" />
+                <span className="sr-only">Anterior operativo</span>
+              </Button>
+              
+              {/* Indicators */}
+              <div className="flex items-center gap-2 px-2">
+                {operations.map((_, index) => (
+                  <button
+                    key={index}
+                    onClick={() => setCurrentOperationIndex(index)}
+                    className={`w-2.5 h-2.5 rounded-full transition-all ${
+                      index === currentOperationIndex 
+                        ? 'bg-logo-blue scale-110' 
+                        : 'bg-logo-blue/30 hover:bg-logo-blue/50'
+                    }`}
+                    aria-label={`Ir al operativo ${index + 1}`}
+                  />
+                ))}
+              </div>
+              
+              <Button 
+                variant="outline" 
+                size="icon" 
+                onClick={goToNextOperation}
+                className="rounded-full bg-white/80 backdrop-blur-sm hover:bg-white border border-blue-100"
+              >
+                <ChevronRight className="h-4 w-4" />
+                <span className="sr-only">Siguiente operativo</span>
+              </Button>
             </div>
-          </Carousel>
+          </div>
         </div>
       </div>
     </section>
