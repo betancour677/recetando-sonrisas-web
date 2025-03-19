@@ -36,18 +36,18 @@ const Navbar = () => {
   return (
     <nav 
       className={cn(
-        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4',
+        'fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-5',
         isScrolled ? 'bg-white/90 backdrop-blur-sm shadow-sm' : 'bg-transparent'
       )}
     >
       <div className="container mx-auto px-4 md:px-6">
         <div className="flex items-center justify-between">
-          {/* Logo */}
+          {/* Logo - increased by 40% */}
           <a href="#" className="flex items-center space-x-2">
             <img 
               src="/lovable-uploads/9ec22ea9-5959-46cc-bb1d-c5d450e3a0a5.png" 
               alt="Recetando Sonrisas Logo" 
-              className="h-12"
+              className="h-16" // Increased from h-12 (approx 40% larger)
             />
           </a>
 
@@ -57,14 +57,14 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-sm font-medium text-gray-700 hover:text-logo-blue transition-colors"
+                className="text-base font-medium text-gray-700 hover:text-logo-blue transition-colors"
               >
                 {link.name}
               </a>
             ))}
             <a
               href="#donar"
-              className="button-glow px-5 py-2 bg-logo-red text-white rounded-full text-sm font-medium hover:bg-logo-red/90 transition-colors"
+              className="button-glow px-6 py-2.5 bg-logo-red text-white rounded-full text-base font-medium hover:bg-logo-red/90 transition-colors"
             >
               Donar
             </a>
@@ -77,9 +77,9 @@ const Navbar = () => {
             aria-label={isOpen ? 'Cerrar menú' : 'Abrir menú'}
           >
             {isOpen ? (
-              <X className="h-6 w-6 text-gray-700" />
+              <X className="h-7 w-7 text-gray-700" />
             ) : (
-              <Menu className="h-6 w-6 text-gray-700" />
+              <Menu className="h-7 w-7 text-gray-700" />
             )}
           </button>
         </div>
@@ -93,7 +93,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-700 hover:text-logo-blue py-2 transition-colors"
+                className="text-lg text-gray-700 hover:text-logo-blue py-2 transition-colors"
                 onClick={() => setIsOpen(false)}
               >
                 {link.name}
@@ -101,7 +101,7 @@ const Navbar = () => {
             ))}
             <a
               href="#donar"
-              className="button-glow px-5 py-2 bg-logo-red text-white rounded-full text-center font-medium hover:bg-logo-red/90 transition-colors"
+              className="button-glow px-5 py-3 bg-logo-red text-white rounded-full text-center font-medium hover:bg-logo-red/90 transition-colors"
               onClick={() => setIsOpen(false)}
             >
               Donar
