@@ -5,49 +5,65 @@ import SectionHeading from "../ui/SectionHeading";
 import { Dialog, DialogContent, DialogClose, DialogTitle } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import { BlurImage } from "../ui/BlurImage";
 
-// Usando las mismas imágenes del Hero
+// Actualizando el arreglo de imágenes con las nuevas fotos proporcionadas
 const images = [
   {
-    src: "/lovable-uploads/5804ba12-945d-4b4b-b2ad-b0dca0ddc9d6.png",
-    alt: "Médico atendiendo a niño en operativo",
-    description: "Nuestros profesionales de la salud brindando atención médica pediátrica durante un operativo."
-  },
-  {
-    src: "/lovable-uploads/14478540-4401-4505-9ea4-8433bd2b2cc6.png",
-    alt: "Registro de pacientes en comunidad rural",
-    description: "Proceso de registro y evaluación inicial para optimizar la atención en las comunidades rurales."
-  },
-  {
-    src: "/lovable-uploads/33b75294-f6fb-44ae-afca-3a8a6670fd16.png",
-    alt: "Atención médica dental en operativo",
-    description: "Servicios de odontología brindados en condiciones de campo durante nuestros operativos médicos."
-  },
-  {
-    src: "/lovable-uploads/78521b81-e92b-4aa1-b3da-bb53e7f4d61f.png",
-    alt: "Doctora atendiendo a niña en operativo",
-    description: "Profesional de la salud realizando evaluación médica a una niña durante un operativo comunitario."
-  },
-  // Manteniendo algunas imágenes adicionales de la galería original
-  {
-    src: "/lovable-uploads/7b9b5eac-b06d-4843-95fb-e98ed171c5bd.png",
+    src: "/lovable-uploads/82e827e0-d8ff-459e-9dc5-41e484b5fdc9.png",
     alt: "Atención dental en operativo médico",
-    description: "Nuestros dentistas voluntarios brindando atención dental gratuita en comunidades rurales."
+    description: "Profesionales dentales brindando atención a un paciente durante un operativo en zona rural."
   },
   {
-    src: "/lovable-uploads/3550c269-abc1-40d5-a3a3-90583d00d857.png",
-    alt: "Registro de pacientes en operativo",
-    description: "Proceso de registro y evaluación inicial para optimizar la atención en cada operativo."
+    src: "/lovable-uploads/0cb4a2fa-8b69-417d-a6df-99fd4cd2d6cc.png",
+    alt: "Equipo de voluntarios médicos",
+    description: "Grupo de voluntarios y profesionales que participaron en uno de nuestros operativos médicos comunitarios."
   },
   {
-    src: "/lovable-uploads/4479e669-090c-426a-9b7f-8c657f20e93e.png",
-    alt: "Equipo médico trabajando en terreno",
-    description: "Nuestro equipo médico adaptándose a las condiciones locales para brindar atención de calidad."
+    src: "/lovable-uploads/f7c9eca3-3a67-4f19-8422-8d24fadffca4.png",
+    alt: "Actividad comunitaria con niños",
+    description: "Actividades recreativas y educativas con niños durante un operativo médico en comunidad rural."
   },
   {
-    src: "/lovable-uploads/8ac3047a-41ff-4921-8ebc-88a9ec3a395a.png",
-    alt: "Registro y atención en comunidad rural",
-    description: "Organizando la logística para optimizar la atención a cientos de personas en un solo día."
+    src: "/lovable-uploads/39128060-516f-445d-b0fe-02400077fe29.png",
+    alt: "Atención médica pediátrica",
+    description: "Médico realizando evaluación de un niño con la ayuda de su madre durante un operativo de salud."
+  },
+  {
+    src: "/lovable-uploads/57cb32b0-7bff-4f43-874e-5effa5b279aa.png",
+    alt: "Registro de pacientes",
+    description: "Proceso de registro y evaluación inicial de pacientes en uno de nuestros operativos comunitarios."
+  },
+  {
+    src: "/lovable-uploads/fdae6671-0041-4fb2-8a57-a3fe1af2a354.png",
+    alt: "Servicio de manicure solidario",
+    description: "Servicios complementarios de bienestar ofrecidos durante nuestros operativos médicos."
+  },
+  {
+    src: "/lovable-uploads/21a377fb-f3dc-40cd-9344-8e91b64314fd.png",
+    alt: "Atención kinesiológica infantil",
+    description: "Atención kinesiológica y evaluación pediátrica durante operativo de salud integral."
+  },
+  {
+    src: "/lovable-uploads/48a1d1ae-3c02-483b-9093-f00c39d5a900.png",
+    alt: "Atención médica y dental",
+    description: "Dentistas profesionales realizando procedimientos durante un operativo médico gratuito."
+  },
+  {
+    src: "/lovable-uploads/dd006947-ca3e-4fd1-8a19-a4068bd3792a.png",
+    alt: "Atención en sala de espera",
+    description: "Coordinación y recepción de pacientes en operativo de salud en zona rural."
+  },
+  {
+    src: "/lovable-uploads/e095e693-6b93-49f9-9e04-e270aec768f9.png",
+    alt: "Atención médica en consultorio móvil",
+    description: "Profesionales de la salud adaptando espacios para brindar atención de calidad en zonas rurales."
+  },
+  {
+    src: "/lovable-uploads/2d05bbe7-77a5-4c97-a30c-e5d3776479ce.png",
+    alt: "Atención dental especializada",
+    description: "Procedimiento dental realizado por nuestros profesionales voluntarios durante un operativo."
   }
 ];
 
@@ -82,7 +98,40 @@ const ImageGallery = () => {
           subtitle="Momentos capturados durante nuestros operativos médicos en diversas comunidades"
         />
         
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12">
+        <div className="mt-12">
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {images.map((image, index) => (
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                  <div 
+                    className="overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer h-full"
+                    onClick={() => openModal(index)}
+                  >
+                    <AspectRatio ratio={4/3}>
+                      <BlurImage
+                        src={image.src}
+                        alt={image.alt}
+                        className="object-cover w-full h-full"
+                      />
+                    </AspectRatio>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="hidden md:block">
+              <CarouselPrevious />
+              <CarouselNext />
+            </div>
+          </Carousel>
+        </div>
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
           {images.map((image, index) => (
             <div 
               key={index} 
@@ -91,7 +140,7 @@ const ImageGallery = () => {
             >
               <div className="relative w-full">
                 <AspectRatio ratio={4/3}>
-                  <img
+                  <BlurImage
                     src={image.src}
                     alt={image.alt}
                     className="object-cover w-full h-full"

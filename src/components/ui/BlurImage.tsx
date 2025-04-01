@@ -10,7 +10,7 @@ interface BlurImageProps {
   height?: number;
 }
 
-const BlurImage = ({ src, alt, className, width, height }: BlurImageProps) => {
+export const BlurImage = ({ src, alt, className, width, height }: BlurImageProps) => {
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
