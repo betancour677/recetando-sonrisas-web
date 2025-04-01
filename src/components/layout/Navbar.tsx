@@ -21,10 +21,9 @@ const Navbar = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Updated navigation links to match the current order of sections
+  // Updated navigation links - removed "Próximos Operativos"
   const navLinks = [
     { name: 'Inicio', href: '#inicio' },
-    { name: 'Próximos Operativos', href: '#proximos-operativos' },
     { name: 'Nosotros', href: '#nosotros' },
     { name: 'Testimonios', href: '#testimonios' },
     { name: 'Colaborar', href: '#colaborar' },
