@@ -1,6 +1,7 @@
 
-import { Facebook, Instagram, Youtube, MessageSquare } from 'lucide-react';
+import { Facebook, Instagram, Youtube, MessageSquare, Lock } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { Link } from 'react-router-dom';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -126,6 +127,13 @@ const Footer = () => {
         {/* Copyright */}
         <div className="border-t border-gray-200 pt-8 text-center text-sm text-muted-foreground">
           <p>© {currentYear} Fundación Recetando Sonrisas. Todos los derechos reservados.</p>
+          <Link 
+            to="/admin/login" 
+            className="inline-flex items-center text-xs text-muted-foreground/60 hover:text-muted-foreground transition-colors mt-2"
+          >
+            <Lock className="h-3 w-3 mr-1" />
+            Admin
+          </Link>
         </div>
       </div>
     </footer>
