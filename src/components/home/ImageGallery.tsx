@@ -104,11 +104,11 @@ const ImageGallery = () => {
               align: "start",
               loop: true,
             }}
-            className="w-full"
+            className="w-full md:hidden"
           >
             <CarouselContent className="-ml-2 md:-ml-4">
               {images.map((image, index) => (
-                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full sm:basis-1/2 md:basis-1/3 lg:basis-1/4">
+                <CarouselItem key={index} className="pl-2 md:pl-4 basis-full">
                   <div 
                     className="overflow-hidden rounded-lg shadow-md transition-all duration-300 hover:shadow-lg hover:-translate-y-1 cursor-pointer h-full"
                     onClick={() => openModal(index)}
@@ -131,8 +131,8 @@ const ImageGallery = () => {
           </Carousel>
         </div>
 
-        {/* Grid view - Removed the duplicated grid row */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
+        {/* Grid view for larger screens */}
+        <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-8">
           {images.map((image, index) => (
             <div 
               key={index} 
