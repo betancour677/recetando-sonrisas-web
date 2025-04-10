@@ -30,7 +30,7 @@ const Index = () => {
       
       if (targetElement) {
         window.scrollTo({
-          top: targetElement.offsetTop - 80, // Adjust for header height
+          top: targetElement.offsetTop - 100, // Adjust for header height
           behavior: 'smooth'
         });
       }
@@ -49,12 +49,12 @@ const Index = () => {
       
       <main className="flex-grow">
         <Hero />
-        <UpcomingOperations />
         <About />
+        <Services />
+        <UpcomingOperations />
+        <ImageGallery />
         <Testimonials />
         <Collaborate />
-        <Services />
-        <ImageGallery />
         <Contact />
       </main>
       
