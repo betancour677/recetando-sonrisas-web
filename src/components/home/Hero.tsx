@@ -11,9 +11,7 @@ const Hero = () => {
         backgroundImage: "url('/lovable-uploads/54c3f6e1-9cf1-4be9-a77f-62a934cfd577.png')",
         backgroundSize: "cover",
         backgroundPosition: "center",
-        minHeight: "100vh", // Full viewport height
-        marginTop: "-104px", // Offset by the header height (topbar + navbar)
-        paddingTop: "104px" // Add padding to account for the offset
+        minHeight: "calc(100vh - 70px)" // Adjust for header height
       }}
     >
       {/* Dark overlay */}

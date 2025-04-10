@@ -1,30 +1,10 @@
 
 import { Facebook, Instagram, Mail } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
 
 const TopBar = () => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   return (
-    <div 
-      className={`text-white py-2 px-4 transition-all duration-300 ${
-        isScrolled ? 'bg-[#1A272E]' : 'bg-transparent'
-      }`}
-    >
+    <div className="bg-[#1A272E] text-white py-2 px-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center gap-4">
           <a 
