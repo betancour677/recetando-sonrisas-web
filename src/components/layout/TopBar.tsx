@@ -1,5 +1,5 @@
 
-import { Facebook, Instagram, Mail } from 'lucide-react';
+import { Facebook, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 interface TopBarProps {
@@ -30,7 +30,6 @@ const TopBar = ({ isTransparent = false }: TopBarProps) => {
             <Instagram size={18} />
           </a>
           <div className="hidden sm:flex items-center gap-2">
-            <Mail size={16} />
             <span className="text-sm">Contáctanos: contacto@recetando.cl</span>
           </div>
         </div>
