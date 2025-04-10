@@ -35,13 +35,23 @@ const Navbar = () => {
     <header className="sticky top-0 z-50 w-full">
       <TopBar />
       
-      <nav className={`w-full bg-white ${isScrolled ? 'shadow-md' : ''}`}>
-        <div className="container mx-auto px-4 flex items-center justify-between h-20">
+      <nav 
+        className={`w-full ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}
+        style={{
+          backgroundImage: !isScrolled ? "url('/lovable-uploads/82e827e0-d8ff-459e-9dc5-41e484b5fdc9.png')" : "none",
+          backgroundSize: "cover",
+          backgroundPosition: "center top",
+          position: "relative"
+        }}
+      >
+        {!isScrolled && <div className="absolute inset-0 bg-black/50"></div>}
+        
+        <div className="container mx-auto px-4 flex items-center justify-between h-20 relative z-10">
           <Link to="/" className="flex items-center">
             <div className="flex items-end">
               <div>
-                <span className="text-[#33a1cc] text-lg font-normal">Recetando</span>
-                <h1 className="text-[#33a1cc] text-2xl font-bold leading-none">Sonrisas</h1>
+                <span className={`text-lg font-normal ${isScrolled ? 'text-[#33a1cc]' : 'text-white'}`}>Recetando</span>
+                <h1 className={`text-2xl font-bold leading-none ${isScrolled ? 'text-[#33a1cc]' : 'text-white'}`}>Sonrisas</h1>
               </div>
               <img src="/lovable-uploads/fdae6671-0041-4fb2-8a57-a3fe1af2a354.png" alt="Logo" className="ml-2 h-10" />
             </div>
@@ -53,7 +63,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-700 hover:text-logo-blue transition-colors text-sm font-medium"
+                className={`hover:text-logo-blue transition-colors text-sm font-medium ${isScrolled ? 'text-gray-700' : 'text-white'}`}
               >
                 {link.name}
               </a>
@@ -70,7 +80,7 @@ const Navbar = () => {
           {/* Mobile Navigation Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-gray-700 focus:outline-none"
+            className={`lg:hidden focus:outline-none ${isScrolled ? 'text-gray-700' : 'text-white'}`}
           >
             {isOpen ? (
               <X className="h-6 w-6" />
