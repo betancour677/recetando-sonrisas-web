@@ -8,7 +8,7 @@ interface TopBarProps {
 
 const TopBar = ({ isTransparent = false }: TopBarProps) => {
   return (
-    <div className={`${isTransparent ? 'bg-transparent' : 'bg-[#1A272E]'} text-white py-2 px-4 transition-colors duration-300`}>
+    <div className="bg-[#1A272E] text-white py-2 px-4">
       <div className="container mx-auto flex justify-between items-center">
         <div className="flex items-center gap-4">
           <a 
