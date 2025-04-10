@@ -32,16 +32,16 @@ const Navbar = () => {
   ];
 
   return (
-    <header className="sticky top-0 z-50 w-full">
-      <TopBar />
+    <header className="fixed top-0 left-0 right-0 z-50 w-full transition-all duration-300">
+      <TopBar isTransparent={!isScrolled} />
       
-      <nav className={`w-full bg-white ${isScrolled ? 'shadow-md' : ''}`}>
+      <nav className={`w-full transition-all duration-300 ${isScrolled ? 'bg-white shadow-md' : 'bg-transparent'}`}>
         <div className="container mx-auto px-4 flex items-center justify-between h-20">
-          <Link to="/" className="flex items-center">
+          <Link to="/" className="flex items-center z-10">
             <div className="flex items-end">
               <div>
-                <span className="text-[#33a1cc] text-lg font-normal">Recetando</span>
-                <h1 className="text-[#33a1cc] text-2xl font-bold leading-none">Sonrisas</h1>
+                <span className={`text-lg font-normal ${isScrolled ? 'text-[#33a1cc]' : 'text-white'} transition-colors duration-300`}>Recetando</span>
+                <h1 className={`text-2xl font-bold leading-none ${isScrolled ? 'text-[#33a1cc]' : 'text-white'} transition-colors duration-300`}>Sonrisas</h1>
               </div>
               <img src="/lovable-uploads/fdae6671-0041-4fb2-8a57-a3fe1af2a354.png" alt="Logo" className="ml-2 h-10" />
             </div>
@@ -53,7 +53,7 @@ const Navbar = () => {
               <a
                 key={link.name}
                 href={link.href}
-                className="text-gray-700 hover:text-logo-blue transition-colors text-sm font-medium"
+                className={`transition-colors text-sm font-medium ${isScrolled ? 'text-gray-700 hover:text-[#33a1cc]' : 'text-white hover:text-white/80'}`}
               >
                 {link.name}
               </a>
@@ -70,7 +70,7 @@ const Navbar = () => {
           {/* Mobile Navigation Button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="lg:hidden text-gray-700 focus:outline-none"
+            className={`lg:hidden focus:outline-none z-10 ${isScrolled ? 'text-gray-700' : 'text-white'}`}
           >
             {isOpen ? (
               <X className="h-6 w-6" />
@@ -88,7 +88,7 @@ const Navbar = () => {
                 <a
                   key={link.name}
                   href={link.href}
-                  className="block py-2 text-gray-700 hover:text-logo-blue"
+                  className="block py-2 text-gray-700 hover:text-[#33a1cc]"
                   onClick={() => setIsOpen(false)}
                 >
                   {link.name}
