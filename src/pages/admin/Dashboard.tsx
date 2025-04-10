@@ -13,11 +13,11 @@ import { useAuth } from "@/contexts/AuthContext";
 import { Link, useNavigate } from "react-router-dom";
 
 const AdminDashboard = () => {
-  const { signOut } = useAuth();
+  const { logout } = useAuth();
   const navigate = useNavigate();
 
   const handleSignOut = () => {
-    signOut();
+    logout();
     navigate("/admin/login");
   };
 
